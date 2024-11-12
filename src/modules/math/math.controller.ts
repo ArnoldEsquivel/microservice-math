@@ -1,7 +1,7 @@
 import { MessagePattern, Payload } from '@nestjs/microservices';
-import { MathService } from './math.service';
 import { Controller } from '@nestjs/common';
-import { MathResponseDto } from '../../utils/dtos/mathResponse.dto';
+
+import { MathService } from './math.service';
 
 @Controller()
 export class MathController {
