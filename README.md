@@ -28,6 +28,7 @@ This project is a NestJS-based microservice application that performs various ma
 
 The project follows a modular structure to maintain clean and organized code. The directory structure is as follows:
 
+```
 src
 ├── core
 │   └── config
@@ -52,6 +53,7 @@ src
 Dockerfile
 docker-compose.yml
 README.md
+```
 
 
 
