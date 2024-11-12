@@ -1,0 +1,24 @@
+services:
+  rabbitmq:
+    image: rabbitmq:3.9-management
+    ports:
+      - '5672:5672'      # Puerto para conexiones de RabbitMQ
+      - '15672:15672'    # Puerto para la interfaz de administración
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
+    volumes:
+      - rabbitmq-data:/var/lib/rabbitmq
+
+  app:
+    build: .
+    ports:
+      - '3000:3000'
+    env_file:
+      - .env.prod        # Cargar variables de entorno desde .env.prod
+    depends_on:
+      - rabbitmq
+    restart: unless-stopped
+
+volumes:
+  rabbitmq-data:
